@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ems_app.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ems_app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.SignIn());
+            Application.Run(new CEODashboard()); ;
         }
     }
 }

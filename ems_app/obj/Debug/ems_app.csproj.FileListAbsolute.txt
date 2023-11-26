@@ -43,3 +43,6 @@ C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\e
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.csproj.Fody.CopyLocal.cache
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.Forms.SignUp.resources
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.Forms.SignIn.resources
+C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.Forms.CEODashboard.resources
+C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.Forms.ucHOD.resources
+C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.ucHOD_panel1.resources
