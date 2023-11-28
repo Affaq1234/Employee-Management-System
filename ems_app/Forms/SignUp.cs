@@ -34,7 +34,7 @@ namespace ems_app.Forms
             String gender = cbGender.Text;
             String department = cbdepartment.Text;
 
-            HOD hodUser = new HOD(name, email,password,age,department,gender);
+            BL.HOD hodUser = new BL.HOD(name, email, password, age, department, gender);
             HOD_DL.AddUserinDB(hodUser);
         }
     }

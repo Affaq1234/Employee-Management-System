@@ -8,22 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ems_app.UC;
 
 namespace ems_app.Forms
 {
     public partial class CEODashboard : KryptonForm
     {
-        private static CEODashboard _instance;
-        public static CEODashboard Instance
+        private Form currentChildForm;
+        private void openChildForm(Form childform)
         {
-            get
+            if (currentChildForm != null)
             {
-                if (_instance == null)
-                {
-                    _instance = new CEODashboard();
-                }
-                return _instance;
+                currentChildForm.Close();
             }
+            currentChildForm = childform;
+            childform.TopLevel = false;
+            childform.Dock = DockStyle.Fill;
+            panelCont.Controls.Add(childform);
+            panelCont.Tag = childform;
+            childform.BringToFront();
+            childform.Show();
+
         }
         public CEODashboard()
         {
@@ -32,18 +37,17 @@ namespace ems_app.Forms
 
         private void CEODashboard_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void addBudgetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           
         }
 
-        private void departmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HodClick(object sender, EventArgs e)
         {
-            navigate.ToHOD();
-
+            openChildForm(new HOD());
         }
     }
 }

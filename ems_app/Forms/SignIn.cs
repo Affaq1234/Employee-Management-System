@@ -29,7 +29,7 @@ namespace ems_app.Forms
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             HOD_DL.LoadUserFromDB();
-            foreach(HOD data in HOD_DL.HOD_list)
+            foreach(BL.HOD data in HOD_DL.HOD_list)
             {
                 if(data.Email == emailtxt.Text && data.Password == passtxt.Text)
                 {
@@ -45,7 +45,8 @@ namespace ems_app.Forms
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            Form form = new SignUp();
+            Form form = new CEODashboard();
+            //Form form = new SignUp();
             form.ShowDialog();
         }
 

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbdepartment = new Krypton.Toolkit.KryptonComboBox();
             this.cbGender = new Krypton.Toolkit.KryptonComboBox();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -60,14 +61,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbdepartment = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbdepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGender)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbdepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -75,7 +75,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(360, 23);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(159, 151);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,6 +112,31 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(882, 587);
             this.panel2.TabIndex = 2;
+            // 
+            // cbdepartment
+            // 
+            this.cbdepartment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbdepartment.CornerRoundingRadius = 18F;
+            this.cbdepartment.DropDownWidth = 238;
+            this.cbdepartment.IntegralHeight = false;
+            this.cbdepartment.Items.AddRange(new object[] {
+            "Sales",
+            "Marketing",
+            "Development",
+            "Human Resource",
+            "Financial",
+            "Administration"});
+            this.cbdepartment.Location = new System.Drawing.Point(485, 447);
+            this.cbdepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbdepartment.Name = "cbdepartment";
+            this.cbdepartment.Size = new System.Drawing.Size(347, 37);
+            this.cbdepartment.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbdepartment.StateCommon.ComboBox.Border.Rounding = 18F;
+            this.cbdepartment.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cbdepartment.TabIndex = 28;
+            this.cbdepartment.Text = "Departments";
             // 
             // cbGender
             // 
@@ -470,37 +495,12 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(4, 150);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(373, 354);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // cbdepartment
-            // 
-            this.cbdepartment.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbdepartment.CornerRoundingRadius = 18F;
-            this.cbdepartment.DropDownWidth = 238;
-            this.cbdepartment.IntegralHeight = false;
-            this.cbdepartment.Items.AddRange(new object[] {
-            "Sales",
-            "Marketing",
-            "Development",
-            "Human Resource",
-            "Financial",
-            "Administration"});
-            this.cbdepartment.Location = new System.Drawing.Point(485, 447);
-            this.cbdepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbdepartment.Name = "cbdepartment";
-            this.cbdepartment.Size = new System.Drawing.Size(347, 37);
-            this.cbdepartment.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbdepartment.StateCommon.ComboBox.Border.Rounding = 18F;
-            this.cbdepartment.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cbdepartment.TabIndex = 28;
-            this.cbdepartment.Text = "Departments";
             // 
             // SignUp
             // 
@@ -519,12 +519,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbdepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGender)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbdepartment)).EndInit();
             this.ResumeLayout(false);
 
         }

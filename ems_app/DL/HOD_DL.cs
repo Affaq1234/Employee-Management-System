@@ -38,6 +38,30 @@ namespace ems_app.DL
                 MessageBox.Show("User Already Exists");
             }
         }
+        public static void DeleteHodData(int id)
+        {
+            var con = Configuration.getInstance().getConnection();
+            SqlCommand cmd = new SqlCommand("Delete From HOD Where id=@id ", con);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Delete Operation Successfull");
+        }
+        public static void UpdateHodinDB(HOD data)
+        {
+            var con = Configuration.getInstance().getConnection();
+            SqlCommand cmd = new SqlCommand("UPDATE HOD SET name = @name,email = @email,password = @pass,age = @age,gender = @gender,department = @dept,updated_at = @updated WHERE id = @id", con);
+            cmd.Parameters.AddWithValue("@id", data.Id);
+            cmd.Parameters.AddWithValue("@name", data.Name);
+            cmd.Parameters.AddWithValue("@email", data.Email);
+            cmd.Parameters.AddWithValue("@pass", data.Password);
+            cmd.Parameters.AddWithValue("@age", data.Age);
+            cmd.Parameters.AddWithValue("@gender", data.Gender);
+            cmd.Parameters.AddWithValue("@dept", data.Department);
+            cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Successfully Updated");
+        }
+
         public static bool NewUserData(string username, string password)
         {
             foreach (HOD data in HOD_list)

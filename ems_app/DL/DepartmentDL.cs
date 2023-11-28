@@ -45,7 +45,7 @@ namespace ems_app.DL
             return true;
 
         }
-        public static void LoadUserFromDB()
+        public static void LoadDeptFromDB()
         {
             departmentList.Clear();
             var con = Configuration.getInstance().getConnection();
