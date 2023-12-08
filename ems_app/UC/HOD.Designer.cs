@@ -42,7 +42,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.emailtxt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.searchtxt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
@@ -250,10 +250,10 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.43478F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.56522F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.emailtxt, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.searchtxt, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 135);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -266,9 +266,9 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(629, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(628, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(130, 38);
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -286,20 +286,21 @@
             this.label4.Text = "Search";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // emailtxt
+            // searchtxt
             // 
-            this.emailtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emailtxt.Location = new System.Drawing.Point(234, 2);
-            this.emailtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.emailtxt.Name = "emailtxt";
-            this.emailtxt.Size = new System.Drawing.Size(347, 39);
-            this.emailtxt.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.emailtxt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.searchtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.searchtxt.Location = new System.Drawing.Point(234, 2);
+            this.searchtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchtxt.Name = "searchtxt";
+            this.searchtxt.Size = new System.Drawing.Size(347, 39);
+            this.searchtxt.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.searchtxt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.emailtxt.StateCommon.Border.Rounding = 18;
-            this.emailtxt.TabIndex = 21;
-            this.emailtxt.Text = "Enter Name";
+            this.searchtxt.StateCommon.Border.Rounding = 18;
+            this.searchtxt.TabIndex = 21;
+            this.searchtxt.Text = "Enter Name";
+            this.searchtxt.TextChanged += new System.EventHandler(this.emailtxt_TextChanged);
             // 
             // HOD
             // 
@@ -331,7 +332,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton deletebtn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton refreshbtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox emailtxt;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox searchtxt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

@@ -41,7 +41,7 @@ namespace ems_app.DL
         public static void DeleteHodData(int id)
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Delete From HOD Where id=@id ", con);
+            SqlCommand cmd = new SqlCommand("UPDATE HOD SET status = 'Inactive' where id = @id", con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Delete Operation Successfull");
@@ -49,7 +49,7 @@ namespace ems_app.DL
         public static void UpdateHodinDB(HOD data)
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("UPDATE HOD SET name = @name,email = @email,password = @pass,age = @age,gender = @gender,department = @dept,updated_at = @updated WHERE id = @id", con);
+            SqlCommand cmd = new SqlCommand("UPDATE HOD SET name = @name,email = @email,password = @pass,age = @age,gender = @gender,department_id = @dept,updated_at = @updated WHERE id = @id", con);
             cmd.Parameters.AddWithValue("@id", data.Id);
             cmd.Parameters.AddWithValue("@name", data.Name);
             cmd.Parameters.AddWithValue("@email", data.Email);
@@ -78,7 +78,7 @@ namespace ems_app.DL
         {
             HOD_list.Clear();
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Select * from HOD", con);
+            SqlCommand cmd = new SqlCommand("Select * from HOD where status = 'Active'", con);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -88,10 +88,12 @@ namespace ems_app.DL
                 string email = reader["email"] as string;
                 string password = reader["password"] as string;
                 string gender = reader["gender"] as string;
-                string dept = reader["department"] as string;
+                int dept = Convert.ToInt32(reader["department_id"]);
+
                 HOD data = new HOD(id,name,email,password,age,dept,gender);
                 HOD_list.Add(data);
             }
+            reader.Close();
         }
     }
 }

@@ -16,9 +16,12 @@ namespace ems_app.Forms
 {
     public partial class SignIn : KryptonForm
     {
+
         public SignIn()
         {
+            
             InitializeComponent();
+            
         }
 
         private void SignIn_Load(object sender, EventArgs e)
@@ -29,6 +32,14 @@ namespace ems_app.Forms
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             HOD_DL.LoadUserFromDB();
+            DepartmentDL.LoadDeptFromDB();
+            if (emailtxt.Text == "CEO" && passtxt.Text == "CEO")
+            {
+                this.Hide();
+                Form form = new CEODashboard();
+                form.ShowDialog();
+            }
+            
             foreach(BL.HOD data in HOD_DL.HOD_list)
             {
                 if(data.Email == emailtxt.Text && data.Password == passtxt.Text)
@@ -45,8 +56,8 @@ namespace ems_app.Forms
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            Form form = new CEODashboard();
-            //Form form = new SignUp();
+            
+            Form form = new SignUp();
             form.ShowDialog();
         }
 

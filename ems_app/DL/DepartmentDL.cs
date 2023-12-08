@@ -19,7 +19,7 @@ namespace ems_app.DL
             if (NewData(data.Name))
             {
                 var con = Configuration.getInstance().getConnection();
-                SqlCommand cmd = new SqlCommand("Insert into Department values (@Name, @created, @update, @status)", con);
+                SqlCommand cmd = new SqlCommand("Insert into Departments values (@Name, @created, @update, @status)", con);
                 cmd.Parameters.AddWithValue("@Name", data.Name);
                 cmd.Parameters.AddWithValue("@created", DateTime.Now);
                 cmd.Parameters.AddWithValue("@update", DateTime.Now);
@@ -30,8 +30,26 @@ namespace ems_app.DL
             }
             else
             {
-                MessageBox.Show("User Already Exists");
+                MessageBox.Show("Department Already Exists");
             }
+        }
+        public static void DeleteDeptData(int id)
+        {
+            var con = Configuration.getInstance().getConnection();
+            SqlCommand cmd = new SqlCommand("UPDATE Departments SET status = 'Inactive' where id = @id", con);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Delete Operation Successfull");
+        }
+        public static void UpdateDept(Department data)
+        {
+            var con = Configuration.getInstance().getConnection();
+            SqlCommand cmd = new SqlCommand("UPDATE Departments SET name = @name,updated_at = @updated WHERE id = @id", con);
+            cmd.Parameters.AddWithValue("@id", data.Id);
+            cmd.Parameters.AddWithValue("@name", data.Name);
+            cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Successfully Updated");
         }
         public static bool NewData(string name)
         {
@@ -49,7 +67,7 @@ namespace ems_app.DL
         {
             departmentList.Clear();
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Select * from Department", con);
+            SqlCommand cmd = new SqlCommand("Select * from Departments where status = 'Active' ", con);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -58,6 +76,7 @@ namespace ems_app.DL
                 Department data = new Department(id, name);
                 departmentList.Add(data);
             }
+            reader.Close();
         }
     }
 }

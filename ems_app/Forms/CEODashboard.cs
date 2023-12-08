@@ -42,7 +42,7 @@ namespace ems_app.Forms
 
         private void addBudgetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            openChildForm(new Department());
         }
 
         private void HodClick(object sender, EventArgs e)

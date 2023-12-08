@@ -47,3 +47,6 @@ C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\e
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.Forms.HOD.resources
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.HOD_panel1.resources
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.HOD_panel2.resources
+C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.Forms.Department.resources
+C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.Dept_panel1.resources
+C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.Dept_panel2.resources

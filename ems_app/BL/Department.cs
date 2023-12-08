@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ems_app.BL
 {
-    class Department
+    public class Department
     {
         private int id;
         private string name;

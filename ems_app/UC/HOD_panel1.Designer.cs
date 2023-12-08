@@ -157,6 +157,7 @@
             this.namelbl.Size = new System.Drawing.Size(211, 76);
             this.namelbl.TabIndex = 1;
             this.namelbl.Text = "Unknownnnnnnnnnnnnnnnn";
+            this.namelbl.Click += new System.EventHandler(this.namelbl_Click);
             // 
             // label1
             // 

@@ -119,13 +119,6 @@
             this.cbdepartment.CornerRoundingRadius = 18F;
             this.cbdepartment.DropDownWidth = 238;
             this.cbdepartment.IntegralHeight = false;
-            this.cbdepartment.Items.AddRange(new object[] {
-            "Sales",
-            "Marketing",
-            "Development",
-            "Human Resource",
-            "Financial",
-            "Administration"});
             this.cbdepartment.Location = new System.Drawing.Point(485, 447);
             this.cbdepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbdepartment.Name = "cbdepartment";

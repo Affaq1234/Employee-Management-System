@@ -18,6 +18,11 @@ namespace ems_app.Forms
         public SignUp()
         {
             InitializeComponent();
+            DepartmentDL.LoadDeptFromDB();
+            foreach (BL.Department data in DepartmentDL.dept_list)
+            {
+                cbdepartment.Items.Add(data.Name);
+            }
         }
 
         private void SignUp_Load(object sender, EventArgs e)
@@ -32,10 +37,18 @@ namespace ems_app.Forms
             String password = passwordtxt.Text;
             int age = Convert.ToInt32(agetxt.Text);
             String gender = cbGender.Text;
-            String department = cbdepartment.Text;
+            int department;
 
-            BL.HOD hodUser = new BL.HOD(name, email, password, age, department, gender);
-            HOD_DL.AddUserinDB(hodUser);
+            foreach (BL.Department dept in DepartmentDL.dept_list)
+            {
+                if (dept.Name == cbdepartment.Text)
+                {
+                    department = dept.Id;
+                    BL.HOD hodUser = new BL.HOD(name, email, password, age, department, gender);
+                    HOD_DL.AddUserinDB(hodUser);
+                    break;
+                }
+            }
         }
     }
 }
