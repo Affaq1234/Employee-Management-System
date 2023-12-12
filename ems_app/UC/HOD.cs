@@ -46,8 +46,13 @@ namespace ems_app.Forms
             {
                 // Get the first row
                 DataGridViewRow firstRow = DGV.Rows[0];
-                openChildForm(new HOD_panel1(ReturnRowObject(firstRow)));
+                
+                if (firstRow.Cells[0].Value != null)
+                {
+                    openChildForm(new HOD_panel1(ReturnRowObject(firstRow)));
+                }
             }
+       
         }
         public void ShowMain()
         {
@@ -184,6 +189,11 @@ namespace ems_app.Forms
         {
             DataRow[] matchingRows = table.Select($"{columnName} LIKE '%{searchValue}%'");
             return matchingRows;
+        }
+
+        private void DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

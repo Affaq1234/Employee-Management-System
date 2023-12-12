@@ -49,5 +49,28 @@ namespace ems_app.Forms
         {
             openChildForm(new HOD());
         }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void btnSignOut_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form f = new SignIn();
+            f.ShowDialog();
+        }
+
+        private void attendanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Attendance());
+        }
+
+        private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Employees());
+        }
     }
 }
