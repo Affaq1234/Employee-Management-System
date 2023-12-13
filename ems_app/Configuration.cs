@@ -28,5 +28,10 @@ namespace ems_app
         {
             return con;
         }
+        public string GetConnectionString()
+        {
+            // Replace this with your logic to retrieve the connection string from the configuration file
+            return ConnectionStr;
+        }
     }
 }

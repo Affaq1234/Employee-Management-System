@@ -129,6 +129,7 @@
             this.genderlbl.TabIndex = 1;
             this.genderlbl.Text = "Rather Not Say";
             this.genderlbl.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.genderlbl.Click += new System.EventHandler(this.genderlbl_Click);
             // 
             // label4
             // 

@@ -13,10 +13,11 @@ namespace ems_app.DL
     {
         private static List<Employees> emp_list = new List<Employees>();
         internal static List<Employees> Emp_list { get => emp_list; set => emp_list = value; }
+
         public static void DeleteEmpData(int id)
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("UPDATE Employees SET status = 'Inactive' where id = @id", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Employee SET status = 'Inactive' where id = @id", con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Delete Operation Successfull");
@@ -24,7 +25,7 @@ namespace ems_app.DL
         public static void AddUserinDB(Employees data)
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Insert into Employees values (@Name, @Department_id, @Salary, @Attendance, @Rating, @Created,@Updated,@Status)", con);
+            SqlCommand cmd = new SqlCommand("Insert into Employee values (@Name, @Department_id, @Salary, @Attendance, @Rating, @Created,@Updated,@Status)", con);
             cmd.Parameters.AddWithValue("@Name", data.Name);
             cmd.Parameters.AddWithValue("@Department_id", data.Department_Id);
             cmd.Parameters.AddWithValue("@Salary", data.Salary);
@@ -41,7 +42,7 @@ namespace ems_app.DL
         public static void UpdateEmpinDB(Employees data)
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("UPDATE Employees SET name = @name,department_id = @Department_id,salary = @Salary,attendance = @Attendance,rating = @Rating,updated_at = @updated WHERE id = @id", con);
+            SqlCommand cmd = new SqlCommand("UPDATE Employee SET name = @name,department_id = @Department_id,salary = @Salary,attendance = @Attendance,rating = @Rating,updated_at = @updated WHERE id = @id", con);
             cmd.Parameters.AddWithValue("@id", data.Id);
             cmd.Parameters.AddWithValue("@name", data.Name);
             cmd.Parameters.AddWithValue("@Department_id", data.Department_Id);
@@ -56,15 +57,15 @@ namespace ems_app.DL
         {
             Emp_list.Clear();
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Select * from Employees where status = 'Active'", con);
+            SqlCommand cmd = new SqlCommand("Select * from Employee where status = 'Active'", con);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 int id = Convert.ToInt32(reader["id"]);
                 string name = reader["name"] as string;
                 int dept = Convert.ToInt32(reader["department_id"]);
-                int salary= Convert.ToInt32(reader["salary"]);
-                int attendance= Convert.ToInt32(reader["attendance"]);
+                int salary = Convert.ToInt32(reader["salary"]);
+                int attendance = Convert.ToInt32(reader["attendance"]);
                 int rating = Convert.ToInt32(reader["rating"]);
 
                 Employees data = new Employees(id, name, dept, salary, attendance, rating);
@@ -72,4 +73,6 @@ namespace ems_app.DL
             }
             reader.Close();
         }
+
+    }
 }

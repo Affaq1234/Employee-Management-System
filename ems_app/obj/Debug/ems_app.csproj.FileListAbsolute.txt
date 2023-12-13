@@ -52,3 +52,5 @@ C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\e
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.Dept_panel2.resources
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.Attendance.resources
 C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.Employees.resources
+C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.Emp_panel1.resources
+C:\Users\nansd\Downloads\SE Lab\Employee Management\Employee-Management-System\ems_app\obj\Debug\ems_app.UC.Emp_panel2.resources

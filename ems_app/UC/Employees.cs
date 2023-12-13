@@ -34,6 +34,22 @@ namespace ems_app.UC
         public Employees()
         {
             InitializeComponent();
+            try
+            {
+                EmployeesDL.LoadUserFromDB();
+            }
+            catch (SqlException ex)
+            {
+                // Handle or log the exception
+                MessageBox.Show($"SQL Exception: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                // Handle or log other exceptions
+                MessageBox.Show($"Exception: {ex.Message}");
+            }
+
+            
             ShowMain();
             if (DGV.Rows.Count > 0)
             {
@@ -118,14 +134,28 @@ namespace ems_app.UC
         }
         public void ShowMain()
         {
-            dataTable.Clear();
-            var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("SELECT e.id, e.name, d.name as [Department Name], e.salary, e.attendance, e.rating,  FROM Employees e JOIN Departments d ON e.department_id = d.id AND h.status = 'Active'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            da.Fill(dataTable);
-            DGV.DataSource = dt;
+            try
+            {
+                dataTable.Clear();
+                var con = Configuration.getInstance().getConnection();
+                SqlCommand cmd = new SqlCommand("SELECT e.id, e.name, d.name as [Department Name], e.salary, e.attendance, e.rating FROM Employee e JOIN Departments d ON e.department_id = d.id AND e.status = 'Active'\r\n", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                da.Fill(dataTable);
+                DGV.DataSource = dt;
+            }
+            catch (SqlException ex)
+            {
+                // Handle or log the exception
+                MessageBox.Show($"SQL Exception: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                // Handle or log other exceptions
+                MessageBox.Show($"Exception: {ex.Message}");
+            }
+            
         }
 
         private void searchtxt_TextChanged(object sender, EventArgs e)
@@ -160,6 +190,11 @@ namespace ems_app.UC
         }
         int indexRow;
         private void DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void DGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {

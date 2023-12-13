@@ -236,6 +236,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DL\DepartmentDL.cs" />
+    <Compile Include="DL\EmployeesDL.cs" />
     <Compile Include="DL\HOD_DL.cs" />
     <Compile Include="Forms\CEODashboard.cs">
       <SubType>Form</SubType>
@@ -255,6 +256,7 @@
     <Compile Include="Forms\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helping\LogTable.cs" />
     <Compile Include="navigate.cs" />
     <Compile Include="UC\Attendance.cs">
       <SubType>Form</SubType>
@@ -285,6 +287,18 @@
     </Compile>
     <Compile Include="UC\Employees.Designer.cs">
       <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Emp_panel1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\Emp_panel1.Designer.cs">
+      <DependentUpon>Emp_panel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Emp_panel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\Emp_panel2.Designer.cs">
+      <DependentUpon>Emp_panel2.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\HOD_panel2.cs">
       <SubType>Form</SubType>
@@ -339,11 +353,17 @@
     <EmbeddedResource Include="UC\Dept_panel1.resx">
       <DependentUpon>Dept_panel1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\Emp_panel1.resx">
+      <DependentUpon>Emp_panel1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\HOD_panel1.resx">
       <DependentUpon>HOD_panel1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\Dept_panel2.resx">
       <DependentUpon>Dept_panel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Emp_panel2.resx">
+      <DependentUpon>Emp_panel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\HOD_panel2.resx">
       <DependentUpon>HOD_panel2.cs</DependentUpon>

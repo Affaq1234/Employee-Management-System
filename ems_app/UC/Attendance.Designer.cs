@@ -35,13 +35,13 @@
             this.DGV1 = new System.Windows.Forms.DataGridView();
             this.paneldept = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.Present = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Absent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cbdepartment = new Krypton.Toolkit.KryptonComboBox();
             this.btnadd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.refreshbtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.datetxt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.Present = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Absent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.paneldept.SuspendLayout();
@@ -138,24 +138,6 @@
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
-            // Present
-            // 
-            this.Present.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Present.HeaderText = "Present";
-            this.Present.MinimumWidth = 6;
-            this.Present.Name = "Present";
-            this.Present.Text = "Present";
-            this.Present.ToolTipText = "Present";
-            // 
-            // Absent
-            // 
-            this.Absent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Absent.HeaderText = "Absent";
-            this.Absent.MinimumWidth = 6;
-            this.Absent.Name = "Absent";
-            this.Absent.Text = "Absent";
-            this.Absent.ToolTipText = "Absent";
-            // 
             // cbdepartment
             // 
             this.cbdepartment.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -173,6 +155,7 @@
             this.cbdepartment.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cbdepartment.TabIndex = 29;
             this.cbdepartment.Text = "Departments";
+            this.cbdepartment.SelectedIndexChanged += new System.EventHandler(this.cbdepartment_SelectedIndexChanged);
             // 
             // btnadd
             // 
@@ -256,6 +239,26 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(621, 201);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
+            // Present
+            // 
+            this.Present.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Present.HeaderText = "Present";
+            this.Present.MinimumWidth = 6;
+            this.Present.Name = "Present";
+            this.Present.Text = "Present";
+            this.Present.ToolTipText = "Present";
+            this.Present.UseColumnTextForButtonValue = true;
+            // 
+            // Absent
+            // 
+            this.Absent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Absent.HeaderText = "Absent";
+            this.Absent.MinimumWidth = 6;
+            this.Absent.Name = "Absent";
+            this.Absent.Text = "Absent";
+            this.Absent.ToolTipText = "Absent";
+            this.Absent.UseColumnTextForButtonValue = true;
+            // 
             // Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -281,12 +284,12 @@
         private System.Windows.Forms.DataGridView DGV1;
         private System.Windows.Forms.Panel paneldept;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.DataGridViewButtonColumn Present;
-        private System.Windows.Forms.DataGridViewButtonColumn Absent;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton refreshbtn;
         private Krypton.Toolkit.KryptonComboBox cbdepartment;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnadd;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox datetxt;
+        private System.Windows.Forms.DataGridViewButtonColumn Present;
+        private System.Windows.Forms.DataGridViewButtonColumn Absent;
     }
 }

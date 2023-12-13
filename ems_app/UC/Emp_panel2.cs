@@ -73,9 +73,8 @@ namespace ems_app.UC
             }
             else
             {
-                int id = emp_data.Id;
-                int attendance = emp_data.Attendance;
-                int salary = emp_data.Salary;
+                int attendance = 0;
+                int salary = int.Parse(salarytxt.Text);
                 String name = nametxt.Text;
                 int rating = Convert.ToInt32(ratingtxt.Text);
                 int department;

@@ -55,5 +55,10 @@ namespace ems_app.UC
         {
 
         }
+
+        private void genderlbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
